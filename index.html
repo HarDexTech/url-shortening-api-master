@@ -23,10 +23,7 @@
     <div id="nav-mobile" class="hidden">
       <div class="close-btn">
         <button class="close">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. -->
             <path
               fill="white"
@@ -70,7 +67,7 @@
     <section class="hero">
       <div class="container">
         <div class="hero-container">
-          <div class="hero-content" data-aos="fade-left">
+          <div class="hero-content">
             <h1>More than just shorter links</h1>
             <p>
               Build your brand's recognition and get detailed insights on how
@@ -132,7 +129,16 @@
               placeholder="Shorten a link here..."
               id="url-input"
             />
-            <div class="error-message" id="error-message">
+            <div class="loaderContainer hidden" id="loader-container">
+              <!-- From Uiverse.io by dovatgabriel -->
+              <div class="newtons-cradle">
+                <div class="newtons-cradle__dot"></div>
+                <div class="newtons-cradle__dot"></div>
+                <div class="newtons-cradle__dot"></div>
+                <div class="newtons-cradle__dot"></div>
+              </div>
+            </div>
+            <div class="error-message hidden" id="error-message">
               Please add a link
             </div>
           </div>

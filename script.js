@@ -20,7 +20,15 @@ function openModalFunc() {
 openModal.addEventListener('click', openModalFunc);
 
 function btnSubmitFunc() {
+  if (urlInput.value.trim() === '') {
+    document.getElementById('error-message').classList.remove('hidden');
+    urlInput.classList.add('input-error');
+    return;
+  }
   const encodedUrl = encodeURIComponent(urlInput.value);
+  document.getElementById('error-message').classList.add('hidden');
+  urlInput.classList.remove('input-error');
+  document.getElementById('loader-container').classList.remove('hidden');
 
   fetch(`https://tinyurl.com/api-create.php?url=${encodedUrl}`)
     .then((response) => {
@@ -32,6 +40,7 @@ function btnSubmitFunc() {
       if (shortUrl.startsWith('https://tinyurl.com/')) {
         console.log('✅ Short URL:', shortUrl);
         createHtml(urlInput.value, shortUrl);
+        document.getElementById('loader-container').classList.add('hidden');
         return shortUrl;
       } else {
         throw new Error('Invalid response from TinyURL');
